@@ -8,6 +8,7 @@ const {
 } = require("./schemas/schemaMoviesValidate.js");
 const cors = require("cors");
 const app = express();
+const PORT = process.env.PORT || 4000;
 
 app.use(express.json());
 // https://youtu.be/-9d3KhCqOtU?si=E-uLZxXwKxTEUZjj&t=5481 => Explicacion de midu sobre los cors
@@ -118,8 +119,6 @@ app.delete("/movies/:id", (req, res) => {
 
   return res.json({ msg: "Movie deleted" });
 });
-
-const PORT = process.env.PORT ?? 3000;
 
 app.listen(PORT, () => {
   console.log(`Server listening on port http://localhost:${PORT}`);
