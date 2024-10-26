@@ -1,0 +1,34 @@
+### Recuperar todas las peliculas
+GET http://localhost:3000/movies
+
+### Recuperar peliculas por id
+GET http://localhost:3000/movies/6a360a18-c645-4b47-9a7b-2a71babbf3e0
+
+### Recuperar peliculas por género
+GET http://localhost:3000/movies?genre=action
+
+
+### Post Crear una pelicula con Post
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+{
+    "title": "WaterWorld",
+    "genre": [
+        "Adventure",
+        "Sci-Fi",
+        "Dystopian"
+        ],
+    "year": 1995,
+    "duration": 135, 
+    "director": "Kevin Reynolds",
+    "poster": "https://www.imdb.com/title/tt0114898/mediaviewer/rm356355584/"
+}
+
+### Actualizar datos
+PATCH  http://localhost:3000/movies/6a360a18-c645-4b47-9a7b-2a71babbf3e0
+Content-Type: application/json
+
+{
+    "director": "Luis Alberto"
+}
